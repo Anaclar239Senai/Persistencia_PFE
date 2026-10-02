@@ -1,0 +1,1012 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* ==============================
+   RESET
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #eee7ff 0%,
+            transparent 35%
+        ),
+        #f7f6fa;
+
+    color: #282432;
+
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   NAVBAR
+============================== */
+
+.navbar {
+    height: 76px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-bottom: 1px solid #e9e5ef;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    backdrop-filter: blur(15px);
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #7654c6;
+
+    color: white;
+
+    font-size: 25px;
+
+    box-shadow: 0 8px 20px rgba(118, 84, 198, 0.25);
+}
+
+
+.logo strong {
+    display: block;
+
+    font-size: 16px;
+
+    color: #292333;
+}
+
+
+.logo span {
+    display: block;
+
+    font-size: 11px;
+
+    color: #918b9c;
+
+    margin-top: 2px;
+}
+
+
+.status-online {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 13px;
+
+    border-radius: 30px;
+
+    background: #f0ecf9;
+
+    color: #66509a;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.status-online span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #63b47c;
+
+    box-shadow: 0 0 0 4px rgba(99, 180, 124, 0.12);
+}
+
+
+/* ==============================
+   CONTAINER
+============================== */
+
+.container {
+    width: min(1120px, 90%);
+
+    margin: 0 auto;
+
+    padding: 45px 0 60px;
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+    min-height: 260px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f4efff
+        );
+
+    border: 1px solid #e9e2f5;
+
+    border-radius: 28px;
+
+    padding: 42px 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    position: relative;
+
+    margin-bottom: 25px;
+}
+
+
+.hero::after {
+    content: "";
+
+    width: 300px;
+    height: 300px;
+
+    position: absolute;
+
+    right: -100px;
+    top: -130px;
+
+    border-radius: 50%;
+
+    background: rgba(126, 90, 204, 0.08);
+}
+
+
+.hero-text {
+    max-width: 680px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.tag,
+.section-label {
+    color: #7654c6;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+}
+
+
+.hero h1 {
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
+
+    margin: 12px 0;
+}
+
+
+.hero h1 strong {
+    color: #7654c6;
+}
+
+
+.hero p {
+    color: #777181;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    max-width: 600px;
+
+    margin-bottom: 24px;
+}
+
+
+.btn-localizar {
+    border: none;
+
+    background: #7654c6;
+
+    color: white;
+
+    padding: 14px 21px;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    box-shadow:
+        0 10px 22px rgba(118, 84, 198, 0.25);
+
+    transition: 0.2s;
+}
+
+
+.btn-localizar:hover {
+    transform: translateY(-2px);
+
+    background: #6847b5;
+
+    box-shadow:
+        0 14px 28px rgba(118, 84, 198, 0.32);
+}
+
+
+.btn-localizar:active {
+    transform: translateY(0);
+}
+
+
+.btn-localizar span {
+    font-size: 19px;
+}
+
+
+.hero-icon {
+    position: relative;
+    z-index: 2;
+
+    margin-right: 40px;
+}
+
+
+.radar-circle {
+    width: 145px;
+    height: 145px;
+
+    border-radius: 50%;
+
+    border: 1px solid #d8c9f2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #7654c6;
+
+    font-size: 55px;
+
+    background: rgba(255,255,255,0.7);
+
+    box-shadow:
+        0 0 0 20px rgba(118,84,198,0.04),
+        0 0 0 40px rgba(118,84,198,0.025);
+}
+
+
+/* ==============================
+   CARDS
+============================== */
+
+.card {
+    background: white;
+
+    border: 1px solid #ebe7f0;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(50, 35, 70, 0.045);
+
+    overflow: hidden;
+}
+
+
+.card-header {
+    min-height: 76px;
+
+    padding: 20px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #f0edf4;
+}
+
+
+.card-header h2 {
+    font-size: 18px;
+
+    margin-top: 5px;
+
+    color: #292432;
+}
+
+
+.mapa-card {
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   MAPA
+============================== */
+
+.mapa-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 11px;
+
+    color: #9a95a2;
+
+    font-weight: 600;
+}
+
+
+.mapa-status span {
+    width: 7px;
+    height: 7px;
+
+    background: #bbb6c2;
+
+    border-radius: 50%;
+}
+
+
+.mapa-wrapper {
+    height: 390px;
+
+    position: relative;
+
+    background: #eeeeee;
+
+    overflow: hidden;
+}
+
+
+.mapa-iframe {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    display: block;
+}
+
+
+.mapa-inicial {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f2f7,
+            #ebe8ef
+        );
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+.mapa-inicial-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 18px;
+
+    font-size: 30px;
+
+    margin-bottom: 14px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.06);
+}
+
+
+.mapa-inicial h3 {
+    font-size: 16px;
+
+    margin-bottom: 7px;
+}
+
+
+.mapa-inicial p {
+    color: #8c8793;
+
+    font-size: 12px;
+
+    max-width: 350px;
+
+    line-height: 1.6;
+}
+
+
+.mapa-footer {
+    min-height: 65px;
+
+    padding: 12px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.link-mapa {
+    color: #7654c6;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.btn-google {
+    border: 1px solid #e6e0ef;
+
+    background: #faf9fc;
+
+    color: #50475d;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: 0.2s;
+}
+
+
+.btn-google:hover:not(:disabled) {
+    background: #f0ebf9;
+
+    border-color: #d9ccef;
+}
+
+
+.btn-google:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+
+/* ==============================
+   INFORMAÇÕES
+============================== */
+
+.informacoes-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   GPS
+============================== */
+
+.gps-badge {
+    background: #f0ebfa;
+
+    color: #7654c6;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.coordenadas {
+    display: flex;
+
+    align-items: center;
+
+    padding: 30px 25px;
+}
+
+
+.coordenada {
+    flex: 1;
+}
+
+
+.coordenada span {
+    display: block;
+
+    color: #aaa5b1;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+
+.coordenada strong {
+    color: #40394b;
+
+    font-family: monospace;
+
+    font-size: 18px;
+}
+
+
+.linha {
+    width: 1px;
+    height: 40px;
+
+    background: #e8e4eb;
+
+    margin: 0 25px;
+}
+
+
+/* ==============================
+   ÚLTIMA LOCALIZAÇÃO
+============================== */
+
+.salvo-icon {
+    width: 31px;
+    height: 31px;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #edf7f0;
+
+    color: #5da974;
+
+    font-weight: 800;
+}
+
+
+.ultima-conteudo {
+    padding: 25px;
+}
+
+
+.ultima-conteudo > span {
+    display: block;
+
+    color: #98929f;
+
+    font-size: 11px;
+
+    margin-bottom: 10px;
+}
+
+
+.ultima-conteudo strong {
+    display: block;
+
+    color: #40394b;
+
+    font-family: monospace;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+.ultima-conteudo small {
+    display: block;
+
+    color: #7654c6;
+
+    font-size: 11px;
+
+    margin-top: 10px;
+
+    font-weight: 600;
+}
+
+
+/* ==============================
+   DESAFIO DRAG AND DROP
+============================== */
+
+.desafio-card {
+    margin-bottom: 20px;
+}
+
+
+.desafio-tag {
+    background: #f3eefb;
+
+    color: #7654c6;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+}
+
+
+.desafio-area {
+    min-height: 170px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.desafio-texto {
+    max-width: 500px;
+}
+
+
+.desafio-texto h3 {
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+
+.desafio-texto p {
+    color: #8c8793;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+.drag-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.papel,
+.lixeira-destino {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 17px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 31px;
+
+    user-select: none;
+}
+
+
+.papel {
+    background: #f5f1fd;
+
+    border: 2px dashed #cfc0e9;
+
+    cursor: grab;
+
+    transition: 0.2s;
+}
+
+
+.papel:hover {
+    transform: translateY(-3px);
+
+    background: #eee7fa;
+}
+
+
+.papel:active {
+    cursor: grabbing;
+}
+
+
+.papel span,
+.lixeira-destino span {
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    color: #82798e;
+
+    margin-top: 4px;
+}
+
+
+.seta-drag {
+    color: #b2abb9;
+
+    font-size: 22px;
+}
+
+
+.lixeira-destino {
+    background: #faf8fb;
+
+    border: 2px dashed #ddd8e1;
+
+    transition: 0.2s;
+}
+
+
+.lixeira-destino.destino-ativo {
+    background: #f3eafa;
+
+    border-color: #7654c6;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 8px 25px rgba(118,84,198,0.15);
+}
+
+
+/* ==============================
+   NOTIFICAÇÃO
+============================== */
+
+.notificacao {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    padding: 14px 18px;
+
+    background: #30283a;
+
+    color: white;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.15);
+
+    transform: translateY(100px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+
+.notificacao.mostrar {
+    transform: translateY(0);
+
+    opacity: 1;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    text-align: center;
+
+    padding: 0 20px 30px;
+
+    color: #aaa4b0;
+
+    font-size: 10px;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 800px) {
+
+    .hero {
+        padding: 35px;
+
+    }
+
+    .hero-icon {
+        margin-right: 0;
+    }
+
+    .informacoes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .desafio-area {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+
+        height: 68px;
+    }
+
+    .status-online {
+        display: none;
+    }
+
+    .container {
+        width: 92%;
+
+        padding-top: 25px;
+    }
+
+    .hero {
+        padding: 30px 25px;
+
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-icon {
+        display: none;
+    }
+
+    .mapa-wrapper {
+        height: 300px;
+    }
+
+    .mapa-footer {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .btn-google {
+        justify-content: center;
+    }
+
+    .coordenadas {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .linha {
+        width: 100%;
+        height: 1px;
+
+        margin: 0;
+    }
+
+    .drag-area {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .desafio-texto {
+        max-width: none;
+    }
+
+}

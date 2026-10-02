@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu GPS | Localização</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">⌖</div>
+
+            <div>
+                <strong>Meu GPS</strong>
+                <span>Localização inteligente</span>
+            </div>
+        </div>
+
+        <div class="status-online">
+            <span></span>
+            Sistema pronto
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <span class="tag">LOCALIZAÇÃO EM TEMPO REAL</span>
+
+                <h1>
+                    Descubra sua
+                    <strong>localização</strong>
+                </h1>
+
+                <p>
+                    Encontre suas coordenadas, visualize sua posição
+                    no mapa e mantenha sua última localização salva.
+                </p>
+
+                <button id="btnLocalizar" class="btn-localizar">
+                    <span>⌖</span>
+                    Encontrar minha localização
+                </button>
+
+            </div>
+
+            <div class="hero-icon">
+                <div class="radar-circle">
+                    <span>⌖</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- MAPA -->
+        <section class="card mapa-card">
+
+            <div class="card-header">
+
+                <div>
+                    <span class="section-label">LOCALIZAÇÃO</span>
+                    <h2>Mapa da sua posição</h2>
+                </div>
+
+                <div id="mapaStatus" class="mapa-status">
+                    <span></span>
+                    Aguardando localização
+                </div>
+
+            </div>
+
+
+            <div class="mapa-wrapper">
+
+                <!-- Mensagem inicial -->
+                <div id="mapaInicial" class="mapa-inicial">
+
+                    <div class="mapa-inicial-icon">
+                        📍
+                    </div>
+
+                    <h3>Seu mapa aparecerá aqui</h3>
+
+                    <p>
+                        Clique em "Encontrar minha localização"
+                        para visualizar sua posição.
+                    </p>
+
+                </div>
+
+
+                <!-- MAPA -->
+                <iframe
+                    id="mapa"
+                    class="mapa-iframe"
+                    title="Mapa da localização"
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+
+            <div class="mapa-footer">
+
+                <a
+                    id="linkMapa"
+                    href="#"
+                    target="_blank"
+                    class="link-mapa">
+                    Ver mapa completo ↗
+                </a>
+
+                <button
+                    id="btnGoogle"
+                    class="btn-google"
+                    disabled>
+                    <span>🌎</span>
+                    Abrir localização no Google Maps
+                    <b>↗</b>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMAÇÕES -->
+        <section class="informacoes-grid">
+
+
+            <!-- GPS -->
+            <div class="card gps-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <span class="section-label">GPS</span>
+                        <h2>Coordenadas atuais</h2>
+                    </div>
+
+                    <div class="gps-badge">
+                        GPS
+                    </div>
+
+                </div>
+
+
+                <div class="coordenadas">
+
+                    <div class="coordenada">
+
+                        <span>LATITUDE</span>
+
+                        <strong id="latitude">
+                            --.--------
+                        </strong>
+
+                    </div>
+
+
+                    <div class="linha"></div>
+
+
+                    <div class="coordenada">
+
+                        <span>LONGITUDE</span>
+
+                        <strong id="longitude">
+                            --.--------
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ÚLTIMA LOCALIZAÇÃO -->
+            <div class="card ultima-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <span class="section-label">
+                            PERSISTÊNCIA
+                        </span>
+
+                        <h2>Última localização</h2>
+                    </div>
+
+                    <div class="salvo-icon">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div class="ultima-conteudo">
+
+                    <span>
+                        Sua última localização salva foi:
+                    </span>
+
+                    <strong id="ultimaLocalizacao">
+                        Nenhuma localização salva.
+                    </strong>
+
+                    <small id="dataLocalizacao">
+                        Nenhuma data registrada.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DRAG AND DROP -->
+        <section class="card desafio-card">
+
+            <div class="card-header">
+
+                <div>
+                    <span class="section-label">
+                        INTERATIVIDADE
+                    </span>
+
+                    <h2>Limpar localização salva</h2>
+                </div>
+
+                <span class="desafio-tag">
+                    GEOLOCATION
+                </span>
+
+            </div>
+
+
+            <div class="desafio-area">
+
+                <div class="desafio-texto">
+
+                    <h3>
+                        Arraste o papel até a lixeira
+                    </h3>
+
+                    <p>
+                        Ao colocar o papel na lixeira,
+                        a última localização salva será
+                        removida do armazenamento do navegador.
+                    </p>
+
+                </div>
+
+
+                <div class="drag-area">
+
+                    <div
+                        id="papel"
+                        class="papel"
+                        draggable="true"
+                        title="Arraste-me para a lixeira">
+
+                        📄
+
+                        <span>
+                            Arraste
+                        </span>
+
+                    </div>
+
+
+                    <div class="seta-drag">
+                        →
+                    </div>
+
+
+                    <div
+                        id="lixeira"
+                        class="lixeira-destino"
+                        title="Solte o papel aqui">
+
+                        🗑️
+
+                        <span>
+                            Solte aqui
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- NOTIFICAÇÃO -->
+    <div
+        id="notificacao"
+        class="notificacao">
+    </div>
+
+
+    <footer>
+        <p>
+            Projeto de Geolocalização • HTML, CSS e JavaScript
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
